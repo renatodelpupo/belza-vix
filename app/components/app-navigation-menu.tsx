@@ -1,8 +1,7 @@
-import { crimson, gray } from '@radix-ui/colors';
 import * as NavigationMenu from '@radix-ui/react-navigation-menu';
-import { styled } from '@stitches/react';
+import { styled } from '@/stitches.config';
 
-const NavigationMenuDemo = () => {
+const AppNavigationMenu = () => {
   return (
     <Root>
       <List>
@@ -133,8 +132,8 @@ const Link = styled(NavigationMenu.Link, {
   userSelect: 'none',
 
   '&:focus, &:hover': {
-    borderBottom: `1px dotted ${crimson.crimson11}`,
-    color: crimson.crimson11,
+    borderBottom: `1px dotted $crimson11`,
+    color: '$crimson11',
     marginBottom: '-1px',
   },
 });
@@ -155,9 +154,6 @@ const MoreInfo = styled('div', {
 
 const Root = styled(NavigationMenu.Root, {
   display: 'flex',
-  // justifyContent: 'center',
-  // width: '100dvw',
-  // zIndex: 1,
 });
 
 const SubList = styled('ul', {
@@ -173,7 +169,7 @@ const SubListItem = styled('li');
 
 const Trigger = styled(NavigationMenu.Trigger, {
   all: 'unset',
-  color: gray.gray12,
+  color: '$gray12',
   cursor: 'pointer',
   fontWeight: 600,
   lineHeight: 1,
@@ -182,15 +178,16 @@ const Trigger = styled(NavigationMenu.Trigger, {
   userSelect: 'none',
 
   '&:focus, &:hover': {
-    borderBottom: `2px solid ${crimson.crimson11}`,
-    color: crimson.crimson11,
+    borderBottom: `2px solid $crimson11`,
+    color: '$crimson11',
     marginBottom: '-6px',
     paddingBottom: 4,
   },
 });
 
 const Viewport = styled(NavigationMenu.Viewport, {
-  backgroundColor: 'white',
+  backgroundColor: '$gray1',
+  color: '$gray12',
   height: 'var(--radix-navigation-menu-viewport-height)',
   overflow: 'hidden',
   position: 'relative',
@@ -208,4 +205,4 @@ const ViewportPosition = styled('div', {
   width: '100dvw',
 });
 
-export default NavigationMenuDemo;
+export default AppNavigationMenu;
