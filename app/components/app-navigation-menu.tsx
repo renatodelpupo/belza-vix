@@ -154,6 +154,10 @@ const MoreInfo = styled('div', {
 
 const Root = styled(NavigationMenu.Root, {
   display: 'flex',
+
+  '@mobile': {
+    display: 'none',
+  },
 });
 
 const SubList = styled('ul', {

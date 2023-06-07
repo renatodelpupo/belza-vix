@@ -18,6 +18,7 @@ const ToggleButton = styled('button', {
   border: 'none',
   color: '$gray12',
   cursor: 'pointer',
+  justifySelf: 'flex-end',
   outline: 'none',
 
   '&:focus-within, &:hover': {
