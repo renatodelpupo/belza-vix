@@ -13,16 +13,23 @@ const AppHeader = () => {
     <Header>
       <Logo />
       <AppNavigationMenu></AppNavigationMenu>
-      <AppThemeToggle />
-      <BurgerToggle />
+      <ActionsWrapper>
+        <ThemeToggle />
+        <BurgerToggle />
+      </ActionsWrapper>
       <NavigationBurger />
     </Header>
   );
 };
 
-const BurgerToggle = styled(AppBurgerToggle, {
-  gridArea: 'burger',
+const ActionsWrapper = styled('div', {
+  display: 'flex',
+  gap: 16,
+  grid: 'actions',
+  justifySelf: 'flex-end',
 });
+
+const BurgerToggle = styled(AppBurgerToggle);
 
 const Header = styled('header', {
   alignItems: 'center',
@@ -38,14 +45,17 @@ const Header = styled('header', {
   '@mobile': {
     display: 'grid',
     gridTemplateAreas: `
-    'logo toggle burger'
-    'nav nav nav'
+      'logo actions'
+      'nav nav'
     `,
-    rowGap: 16,
   },
 
-  '#toggle-button.is-active ~ #navigation-burger': {
-    display: 'block',
+  '&:has(#toggle-button.is-active)': {
+    rowGap: 16,
+
+    '#navigation-burger': {
+      display: 'block',
+    },
   },
 });
 
@@ -56,5 +66,7 @@ const NavigationBurger = styled(AppNavigationBurger, {
 const Logo = styled(BelzaLogo, {
   color: '$gray12',
 });
+
+const ThemeToggle = styled(AppThemeToggle);
 
 export default AppHeader;
